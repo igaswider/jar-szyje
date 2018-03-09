@@ -1,0 +1,145 @@
+@import "../_mixins.scss";
+
+.start {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+
+  nav {
+    position: fixed;
+    z-index: 99999999;
+    width: 100%;
+    /*hamburger*/
+    .hamburger {
+      position: relative;
+      width: 50px;
+      height: 20px;
+      border: 0;
+      border-top: 3px solid black;
+      margin: 3rem;
+      background: transparent;
+      outline: 0;
+      @include prefix-test(transition, 0.3s transform linear);
+      cursor: pointer;
+
+      &:after,
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-top: 3px solid black;
+        content: '';
+        @include prefix-test(transform, translateY(8px));
+      }
+
+      &:after {
+        @include prefix-test(transform, translateY(20px));
+        @include prefix-test(transition, 0.3s transform linear);
+      }
+
+      &:focus {
+        border: none;
+        @include prefix-test(transform, rotate(45deg) translateY(5px));
+      }
+    }
+
+    .hamburger:focus::after {
+      @include prefix-test(transform, rotate(-90deg) translateX(-10px));
+    }
+    /*dropdown menu*/
+    .dropdown-menu {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-align: center;
+      @include prefix-test(transition, 0.3s);
+      @include prefix-test(transform, translateY(-140%));
+      @include prefix-test(transition, 1s transform ease-in-out);
+    }
+
+    .show-menu {
+      @include prefix-test(transform, translateY(0));
+      @include prefix-test(transition, 1s transform ease-out);
+    }
+
+    ul {
+      position: relative;
+      margin: 0 auto;
+      font-size: 3rem;
+      text-transform: uppercase;
+      list-style: none;
+
+      li {
+        padding: 3.15rem;
+        color: #000;
+        font-size: 3.5rem;
+        text-decoration: none;
+
+        a {
+          color: #000;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  /* film na całą szerokość ekranu*/
+  @media (min-aspect-ratio: 16 / 9) {
+    .start__content--bg-video {
+      top: 0;
+      height: 110%;
+    }
+  }
+  @media (max-aspect-ratio: 16 / 9) {
+    .start__content--bg-video {
+      width: 300%;
+      left: -100%;
+    }
+  }
+  /*rest of header*/
+  .start__content {
+    position: fixed;
+    z-index: -100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    .start__content--bg-video {
+      position: absolute;
+      z-index: -10000;
+      opacity: 0;
+      @include prefix-test(transition, 3s);
+    }
+
+    .start__logo,
+    .start__text {
+      position: absolute;
+      right: 0;
+      bottom: 2rem;
+      left: 0;
+    }
+
+    .start__logo {
+      top: -40%;
+      width: 33%;
+      height: 21rem;
+      background: url("../images/logo/logojar/szyszka_biel.png") center / contain no-repeat;
+
+      margin: 0 auto;
+      @include prefix-test(transition, 2s);
+    }
+
+    .start__text {
+      width: 15%;
+      height: 12rem;
+      background: url("../images/logo/logojar/napis_biel.png") center / contain no-repeat;
+      /*centered element*/
+      margin: 0 auto;
+    }
+  }
+}

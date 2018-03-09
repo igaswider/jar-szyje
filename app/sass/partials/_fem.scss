@@ -1,0 +1,70 @@
+/*fem clothes article*/
+.fem {
+  position: relative;
+  background-color: #fff;
+
+  .fem__image {
+    position: relative;
+    width: 100%;
+    height: 145vh;
+    margin: 10rem 0;
+    overflow: hidden;
+
+    .fem__txt {
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      font-weight: 200;
+      font-size: 3rem;
+      line-height: 150%;
+      @include prefix-test(color, transparent);
+      @include prefix-test(text-shadow, 0 0 1px rgba(255,255, 255, 0.7));
+    }
+
+    .fem__txt--sec {
+      display: none;
+      transition: 0.5s;
+    }
+
+    .fem__bg-narrow {
+      position: absolute;
+      z-index: 999;
+      top: 50%;
+      @include prefix-test(transform, translateY(-50%));
+      width: 8rem;
+      height: 8rem;
+      background: url(".././images/next.svg") center center / cover no-repeat;
+      @include prefix-test(transform, translateY(-50%) rotateY(180deg));
+      opacity: 0.6;
+    }
+
+    .fem__bg-narrow.fem__bg-narrow--mirror {
+      right: 0;
+      @include prefix-test(transform, translateY(-50%));
+    }
+
+    .fem__image--one .fem__bg-narrow {
+      left: 0;
+    }
+  }
+
+  .fem__image--one {
+    background: url(".././images/fem4.jpg") center center / cover no-repeat;
+    transition: 0.5s;
+  }
+
+  .fem__image--sec {
+    background: url(".././images/fem1.jpg") center center / cover no-repeat;
+    transition: 0.5s;
+  }
+
+  .fem__image--two {
+    background: url(".././images/fem5.jpg") center center / cover no-repeat;
+    transition: 0.5s;
+  }
+
+  .fem__image--trip {
+    background: url(".././images/fem3.jpg") center center / cover no-repeat;
+    transition: 0.5s;
+  }
+}

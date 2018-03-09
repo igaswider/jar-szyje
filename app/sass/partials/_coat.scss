@@ -1,0 +1,100 @@
+.coat {
+  position: relative;
+  .coat--bg-opacity {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.5;
+  }
+  .coat__image {
+    position: relative;
+    height: 100vh;
+  }
+  .coat__image.coat--one {
+    background: url(".././images/pop_2.jpg") 25% / cover no-repeat fixed;
+  }
+  .coat__image.coat--two {
+    background: url(".././images/pop_7.jpg") 25% / cover no-repeat fixed;
+  }
+  .coat__image.coat--three {
+    background: url(".././images/trzecie.jpg") 25% / cover no-repeat fixed;
+  }
+
+  .coat__logo {
+    @include screen(desktopLarge) {
+      height: 20rem;
+    }
+    position: absolute;
+    z-index: 99999999;
+    top: 60%;
+    right: 5%;
+    width: 20%;
+    height: 15rem;
+    background: url("../images/logo/logojar/szyszka_biel.png") center / contain no-repeat;
+    cursor: cell;
+  }
+
+  .coat__logo--pulse {
+    animation-name: pulse_animation;
+    animation-duration: 3000ms;
+    transform-origin: 50% 70%;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+  }
+
+  .coat__text {
+    position: absolute;
+    top: 25%;
+    left: 7%;
+    font-weight: 200;
+    font-size: 3.5rem;
+    text-align: right;
+    line-height: 150%;
+    @include prefix-test(color, transparent);
+    @include prefix-test(text-shadow, 0 0 1px rgba(255, 255, 255, 0.6));
+  }
+
+  .coat__content {
+    width: 100%;
+    height: 100vh;
+  }
+  .coat__content--bg-video {
+    width: 100%;
+  }
+}
+/*pulse animation*/
+@keyframes pulse_animation {
+  0% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(1.08);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scale(1.05);
+  }
+
+  80% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

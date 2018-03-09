@@ -1,0 +1,75 @@
+@import '../sass/partials/_header.scss';
+@import '../sass/partials/_footer.scss';
+@import '../sass/partials/_intro.scss';
+@import '../sass/partials/_coat.scss';
+@import '../sass/partials/_shirt.scss';
+@import '../sass/partials/_fem.scss';
+@import '_mixins.scss';
+@import url('https://fonts.googleapis.com/css?family=Varela');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  @include screen(mobile) {
+    font-size: 16px;
+  }
+  @include screen(tablet) {
+//    font-size: 90%;
+  }
+  @include screen(desktopSmall) {
+   font-size: 12px;
+  }
+  @include screen(desktopLarge) {
+  //  font-size: 80%;
+  }
+}
+
+body {
+  font-family: 'News Cycle', sans-serif;
+}
+
+/*grid*/
+$cols: 12;
+$width-base: 100%/$cols;
+
+%clearfix {
+  &:after,
+  &:before {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  //max-width: 1060px;
+}
+
+.row {
+  @extend %clearfix;
+}
+
+[class*='col-'] {
+  float: left;
+  min-height: 1px;
+  width: 100%;
+  //gutter
+  //padding: 0.5rem;
+}
+@for $i from 1 through $cols {
+  .col-#{$i} {
+    width: $width-base * $i;
+  }
+}
+@media (max-width: 768px) {
+  [class*='col-'] {
+    float: none;
+    width: 100%;
+  }
+}

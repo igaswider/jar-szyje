@@ -1,0 +1,78 @@
+.shirt {
+  position: relative;
+  width: 100%;
+  background-color: white;
+  overflow: hidden;
+
+  .shirt__bg-narrow {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    @include prefix-test(transform, translateY(-50%));
+    width: 8rem;
+    height: 8rem;
+    background: url(".././images/next.svg") center center / cover no-repeat;
+    opacity: 0.6;
+  }
+
+  .shirt__image {
+    position: relative;
+    height: 80vh;
+    margin: 0 0 10rem;
+
+    .shirt__txt {
+      position: absolute;
+      font-weight: 100;
+      font-size: 3rem;
+      text-align: right;
+      line-height: 150%;
+      @include prefix-test(color, transparent);
+      @include prefix-test(text-shadow, 0 0 0.5px rgba(255, 255, 255, 0.6));
+    }
+
+    .shirt__txt--one {
+      top: 25%;
+      right: 25%;
+      width: 10%;
+      @include prefix-test(transform, translateY(25vh));
+    }
+
+    .shirt__txt--two {
+      top: 15%;
+      left: 7%;
+      width: 10%;
+      @include prefix-test(transform, translateY(0));
+    }
+
+    .shirt__txt--three {
+      top: 50%;
+      left: 30rem;
+      @include prefix-test(text-shadow, 0 0 1px rgba(111, 92, 85, 0.8));
+    }
+
+    .shirt__txt--sec {
+      right: 20rem;
+      transition: 0.5s;
+    }
+  }
+
+  .shirt__image--one {
+    background: url(".././images/pierwsze-bg.jpg") center center / cover no-repeat fixed;
+  }
+
+  .shirt__image--two {
+    margin-top: 10rem;
+    background: url(".././images/trzecie-bg.jpg") 70% / cover no-repeat fixed;
+  }
+
+  .shirt__image--three {
+    margin-top: 10rem;
+    background: url(".././images/drugie-bg.jpg") 70% / cover no-repeat fixed;
+    transition: 0.5s;
+  }
+
+  .shirt__image--three.shirt__image--sec {
+    background: url(".././images/5.jpg") bottom / cover no-repeat fixed;
+    transition: 0.5s;
+  }
+}

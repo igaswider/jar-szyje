@@ -1,0 +1,29 @@
+.intro {
+  position: relative;
+  width: 100%;
+  background-color: white;
+  overflow: hidden;
+
+  .intro__image {
+    position: relative;
+    height: 80vh;
+    margin: 10rem 0;
+    background: url(".././images/roslinki.jpg") center center / cover no-repeat fixed;
+
+    .intro__txt {
+      @include screen(desktopSmall) {
+        width: 50%;
+        padding: 1.25rem 7rem;
+      }
+      position: relative;
+      top: 50%;
+      @include prefix-test(transform, translateY(-50%));
+      padding: 1.25rem 0;
+      margin: 0 auto;
+      background-color: rgba(56, 57, 56, 0.7);
+      color: white;
+      font-size: 1.2rem;
+      font-family: 'Varela', sans-serif;
+    }
+  }
+}

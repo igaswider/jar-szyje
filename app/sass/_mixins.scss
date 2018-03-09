@@ -1,0 +1,40 @@
+/*Prefix mixin*/
+@mixin prefix-test($properties, $value) {
+  @each $prefix in '-webkit-', '-moz-', '-ms-', '-o-', '' {
+    #{$prefix}$properties: $value;
+  }
+}
+
+/*media-queries mixin*/
+
+@mixin screen($size) {
+  $desktopLarge: "(min-width: 1400px)";
+  $desktopSmall: "(min-width: 960px)";
+  $tablet: "(min-width: 768px)";
+  $mobile: "(min-width: 320px)";
+  @if $size == desktopLarge {
+    @media only screen and #{$desktopLarge} {
+      @content;
+    }
+  }
+  @else if $size == desktopSmall {
+    @media only screen and #{$desktopSmall} {
+      @content;
+    }
+  }
+  @else if $size == tablet {
+    @media only screen and #{$tablet} {
+      @content;
+    }
+  }
+  @else if $size == mobile {
+    @media only screen and #{$mobile} {
+      @content;
+    }
+  }
+  @else {
+    @media only screen and #{$size} {
+      @content;
+    }
+  }
+}
