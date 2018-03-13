@@ -1,46 +1,33 @@
 @import '../_mixins.scss';
+
 .footer {
+  min-height: 100vh;
   position: relative;
   background-color: #fff;
   overflow: hidden;
+  width: 100%;
 
   .footer__image {
+    position: relative;
+    width: 100%;
     height: 90vh;
     margin: 10rem 0 2.5rem;
-  }
-
-  .footer__image--her {
-    background: url(".././images/Pola_kontakt_pop3.jpg") calc(100% - 60rem) calc(100% - (-2rem)) / contain no-repeat fixed;
-  }
-
-  .footer__image--him {
-    background: url(".././images/M_kontakt_pop2.jpg") 85rem 4rem / contain no-repeat fixed;
-  }
-  @media only screen and (min-width: 960px) {
-    .footer__image--him {
-      background: url(".././images/M_kontakt_pop2.jpg") calc(100% - 9rem) calc(100% - (-2rem))/contain no-repeat fixed;
-    }
-  }
-
-  .footer__logo {
-    position: absolute;
-    top: 50%;
-    @include prefix-test(transform, translateY(-50%));
-    right: 0;
-    width: 100%;
-    height: 30%;
-    background: url(".././images/logo/logojar/jar_transpa.png") center / contain no-repeat;
+    background: url(".././images/foto.jpg") center center / cover no-repeat fixed;
   }
 
   .footer__txt {
     position: absolute;
-    bottom: 10rem;
-    right: 50%;
+    bottom: 2rem;
+    left: 0;
+    color: white;
     @include prefix-test(transform, translateX(50%));
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.5;
     text-align: justify;
-    @include prefix-test(text-shadow, 0 0 1px rgba(255, 255, 255, 0.8));
+  }
+
+  .footer__txt > p {
+    right: 10rem;
   }
 
   .footer__personal {
@@ -50,8 +37,8 @@
 
     .number {
       position: absolute;
-      font-size: 1rem;
-      right: 0;
+      font-size: 1.5rem;
+      right: -2rem;
     }
 
     .name,
@@ -65,7 +52,13 @@
 
     a {
       padding-right: 1rem;
-      color: black;
+      color: white;
     }
+  }
+
+  .footer__logo {
+    height: 45vh;
+    margin: 2.5rem 0;
+    background: url(".././images/logo/logojar/jar_transpa.png") center center / contain no-repeat;
   }
 }

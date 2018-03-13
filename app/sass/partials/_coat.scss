@@ -1,5 +1,6 @@
 .coat {
   position: relative;
+  background-color: #fff;
   .coat--bg-opacity {
     position: absolute;
     z-index: 1;
@@ -16,16 +17,13 @@
     background: url(".././images/pop_2.jpg") 25% / cover no-repeat fixed;
   }
   .coat__image.coat--two {
-    background: url(".././images/pop_7.jpg") 25% / cover no-repeat fixed;
+    background: url(".././images/pajka03.jpg") 25% / cover no-repeat fixed;
   }
   .coat__image.coat--three {
     background: url(".././images/trzecie.jpg") 25% / cover no-repeat fixed;
   }
 
   .coat__logo {
-    @include screen(desktopLarge) {
-      height: 20rem;
-    }
     position: absolute;
     z-index: 99999999;
     top: 60%;
@@ -56,6 +54,11 @@
     @include prefix-test(text-shadow, 0 0 1px rgba(255, 255, 255, 0.6));
   }
 
+  .coat__text.coat--two {
+    left: 26%;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 1.6);
+  }
+
   .coat__content {
     width: 100%;
     height: 100vh;
@@ -64,6 +67,21 @@
     width: 100%;
   }
 }
+/*media queries*/
+
+.coat {
+  .coat__logo {
+    @include screen(tablet) {
+      top: 75%;
+    }
+  }
+  .coat__text.coat--one {
+    @include screen(tablet){
+      top: 75%;
+    }
+  }
+}
+
 /*pulse animation*/
 @keyframes pulse_animation {
   0% {

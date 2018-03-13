@@ -96,7 +96,7 @@ $(document).ready(function() {
     var height = $(this).height();
     var scrollBottom = $(document).height() - $(window).height() - $(window).scrollTop();
     var upDown = wScroll - scrollBottom;
-    
+
     $('.coat--bg-opacity').each(function() {
       if (wScroll >= $(this).offset().top - 500 && wScroll <= $(this).offset().top + 200) {
         $(this).css({
@@ -125,7 +125,7 @@ $(window).on('load', function() {
 
   setTimeout(function() {
     $('.start__logo').css({
-      'top': '35%'
+      'top': '25%'
     });
   }, 1500);
 

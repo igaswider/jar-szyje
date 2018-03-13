@@ -49,22 +49,22 @@
   }
 
   .fem__image--one {
-    background: url(".././images/fem4.jpg") center center / cover no-repeat;
-    transition: 0.5s;
-  }
-
-  .fem__image--sec {
     background: url(".././images/fem1.jpg") center center / cover no-repeat;
     transition: 0.5s;
   }
 
+  .fem__image--sec {
+    background: url(".././images/fem4.jpg") center center / cover no-repeat;
+    transition: 0.5s;
+  }
+
   .fem__image--two {
-    background: url(".././images/fem5.jpg") center center / cover no-repeat;
+    background: url(".././images/fem3.jpg") center center / cover no-repeat;
     transition: 0.5s;
   }
 
   .fem__image--trip {
-    background: url(".././images/fem3.jpg") center center / cover no-repeat;
+    background: url(".././images/fem5.jpg") center center / cover no-repeat;
     transition: 0.5s;
   }
 }

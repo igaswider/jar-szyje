@@ -14,24 +14,12 @@
 }
 
 html {
-  @include screen(mobile) {
-    font-size: 16px;
-  }
-  @include screen(tablet) {
-//    font-size: 90%;
-  }
-  @include screen(desktopSmall) {
-   font-size: 12px;
-  }
-  @include screen(desktopLarge) {
-  //  font-size: 80%;
-  }
+  @include fluid-type(font-size, 320px, 1366px, 14px, 18px);
 }
 
 body {
   font-family: 'News Cycle', sans-serif;
 }
-
 /*grid*/
 $cols: 12;
 $width-base: 100%/$cols;
@@ -67,7 +55,7 @@ $width-base: 100%/$cols;
     width: $width-base * $i;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   [class*='col-'] {
     float: none;
     width: 100%;

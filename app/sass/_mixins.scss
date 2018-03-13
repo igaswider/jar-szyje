@@ -8,10 +8,10 @@
 /*media-queries mixin*/
 
 @mixin screen($size) {
-  $desktopLarge: "(min-width: 1400px)";
-  $desktopSmall: "(min-width: 960px)";
-  $tablet: "(min-width: 768px)";
-  $mobile: "(min-width: 320px)";
+  $desktopLarge: "(max-width: 1900px)";
+  $desktopSmall: "(max-width: 1399px)";
+  $tablet: "(max-width: 959px)";
+  $mobile: "(max-width: 767px)";
   @if $size == desktopLarge {
     @media only screen and #{$desktopLarge} {
       @content;
@@ -35,6 +35,26 @@
   @else {
     @media only screen and #{$size} {
       @content;
+    }
+  }
+}
+
+/*fluid typography*/
+
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  @each $property in $properties {
+    #{$property}: $min-value;
+  }
+
+  @media screen and (min-width: $min-vw) {
+    @each $property in $properties {
+      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+    }
+  }
+
+  @media screen and (min-width: $max-vw) {
+    @each $property in $properties {
+      #{$property}: $max-value;
     }
   }
 }

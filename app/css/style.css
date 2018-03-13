@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /*Prefix mixin*/
 /*media-queries mixin*/
+/*fluid typography*/
 @import url("https://fonts.googleapis.com/css?family=Varela");
 .start {
   position: relative;
@@ -16,7 +17,7 @@
     /*dropdown menu*/ }
     .start nav .hamburger {
       position: relative;
-      width: 50px;
+      width: 3rem;
       height: 20px;
       border: 0;
       border-top: 3px solid black;
@@ -79,11 +80,11 @@
       -ms-transition: 0.3s;
       -o-transition: 0.3s;
       transition: 0.3s;
-      -webkit-transform: translateY(-140%);
-      -moz-transform: translateY(-140%);
-      -ms-transform: translateY(-140%);
-      -o-transform: translateY(-140%);
-      transform: translateY(-140%);
+      -webkit-transform: translateY(-150%);
+      -moz-transform: translateY(-150%);
+      -ms-transform: translateY(-150%);
+      -o-transform: translateY(-150%);
+      transform: translateY(-150%);
       -webkit-transition: 1s transform ease-in-out;
       -moz-transition: 1s transform ease-in-out;
       -ms-transition: 1s transform ease-in-out;
@@ -131,7 +132,7 @@
     left: 0; }
     .start .start__content .start__content--bg-video {
       position: absolute;
-      z-index: -10000;
+      z-index: -99999999999999999;
       opacity: 0;
       -webkit-transition: 3s;
       -moz-transition: 3s;
@@ -142,10 +143,11 @@
     .start .start__content .start__text {
       position: absolute;
       right: 0;
-      bottom: 2rem;
       left: 0; }
+    .start .start__content .start__text {
+      bottom: 7rem; }
     .start .start__content .start__logo {
-      top: -40%;
+      top: -21rem;
       width: 33%;
       height: 21rem;
       background: url("../images/logo/logojar/szyszka_biel.png") center/contain no-repeat;
@@ -162,57 +164,52 @@
       /*centered element*/
       margin: 0 auto; }
 
+/*media queries*/
+@media only screen and (max-width: 1399px) {
+  .start .start__content .start__text {
+    bottom: 3rem; } }
+
+@media only screen and (max-width: 959px) {
+  .start .start__content .start__text {
+    width: 40%;
+    bottom: 25%; } }
+
 /*Prefix mixin*/
 /*media-queries mixin*/
+/*fluid typography*/
 .footer {
+  min-height: 100vh;
   position: relative;
   background-color: #fff;
-  overflow: hidden; }
+  overflow: hidden;
+  width: 100%; }
   .footer .footer__image {
-    height: 90vh;
-    margin: 10rem 0 2.5rem; }
-  .footer .footer__image--her {
-    background: url(".././images/Pola_kontakt_pop3.jpg") calc(100% - 60rem) calc(100% - (-2rem))/contain no-repeat fixed; }
-  .footer .footer__image--him {
-    background: url(".././images/M_kontakt_pop2.jpg") 85rem 4rem/contain no-repeat fixed; }
-  @media only screen and (min-width: 960px) {
-    .footer .footer__image--him {
-      background: url(".././images/M_kontakt_pop2.jpg") calc(100% - 9rem) calc(100% - (-2rem))/contain no-repeat fixed; } }
-  .footer .footer__logo {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    right: 0;
+    position: relative;
     width: 100%;
-    height: 30%;
-    background: url(".././images/logo/logojar/jar_transpa.png") center/contain no-repeat; }
+    height: 90vh;
+    margin: 10rem 0 2.5rem;
+    background: url(".././images/foto.jpg") center center/cover no-repeat fixed; }
   .footer .footer__txt {
     position: absolute;
-    bottom: 10rem;
-    right: 50%;
+    bottom: 2rem;
+    left: 0;
+    color: white;
     -webkit-transform: translateX(50%);
     -moz-transform: translateX(50%);
     -ms-transform: translateX(50%);
     -o-transform: translateX(50%);
     transform: translateX(50%);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1.5;
-    text-align: justify;
-    -webkit-text-shadow: 0 0 1px rgba(255, 255, 255, 0.8);
-    -moz-text-shadow: 0 0 1px rgba(255, 255, 255, 0.8);
-    -ms-text-shadow: 0 0 1px rgba(255, 255, 255, 0.8);
-    -o-text-shadow: 0 0 1px rgba(255, 255, 255, 0.8);
-    text-shadow: 0 0 1px rgba(255, 255, 255, 0.8); }
+    text-align: justify; }
+  .footer .footer__txt > p {
+    right: 10rem; }
   .footer .footer__personal p {
     display: inline-block; }
   .footer .footer__personal .number {
     position: absolute;
-    font-size: 1rem;
-    right: 0; }
+    font-size: 1.5rem;
+    right: -2rem; }
   .footer .footer__personal .name,
   .footer .footer__personal .number {
     margin: 1rem 0 0; }
@@ -220,7 +217,11 @@
     margin: 1rem 0 0; }
     .footer .footer__social a {
       padding-right: 1rem;
-      color: black; }
+      color: white; }
+  .footer .footer__logo {
+    height: 45vh;
+    margin: 2.5rem 0;
+    background: url(".././images/logo/logojar/jar_transpa.png") center center/contain no-repeat; }
 
 .intro {
   position: relative;
@@ -231,28 +232,36 @@
     position: relative;
     height: 80vh;
     margin: 10rem 0;
-    background: url(".././images/roslinki.jpg") center center/cover no-repeat fixed; }
+    background: url(".././images/intro.jpg") center center/cover no-repeat fixed; }
+    @media only screen and (max-width: 767px) {
+      .intro .intro__image {
+        margin: 5rem 0; } }
     .intro .intro__image .intro__txt {
       position: relative;
+      width: 47%;
       top: 50%;
       -webkit-transform: translateY(-50%);
       -moz-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       -o-transform: translateY(-50%);
       transform: translateY(-50%);
-      padding: 1.25rem 0;
+      padding: 1.25rem 6rem;
       margin: 0 auto;
       background-color: rgba(56, 57, 56, 0.7);
       color: white;
       font-size: 1.2rem;
       font-family: 'Varela', sans-serif; }
-      @media only screen and (min-width: 960px) {
-        .intro .intro__image .intro__txt {
-          width: 50%;
-          padding: 1.25rem 7rem; } }
+
+/*media queries*/
+@media only screen and (max-width: 959px) {
+  .intro .intro__image .intro__txt {
+    width: 100%;
+    padding: 1rem 4rem;
+    font-size: 1.5rem; } }
 
 .coat {
-  position: relative; }
+  position: relative;
+  background-color: #fff; }
   .coat .coat--bg-opacity {
     position: absolute;
     z-index: 1;
@@ -266,7 +275,7 @@
   .coat .coat__image.coat--one {
     background: url(".././images/pop_2.jpg") 25%/cover no-repeat fixed; }
   .coat .coat__image.coat--two {
-    background: url(".././images/pop_7.jpg") 25%/cover no-repeat fixed; }
+    background: url(".././images/pajka03.jpg") 25%/cover no-repeat fixed; }
   .coat .coat__image.coat--three {
     background: url(".././images/trzecie.jpg") 25%/cover no-repeat fixed; }
   .coat .coat__logo {
@@ -278,9 +287,6 @@
     height: 15rem;
     background: url("../images/logo/logojar/szyszka_biel.png") center/contain no-repeat;
     cursor: cell; }
-    @media only screen and (min-width: 1400px) {
-      .coat .coat__logo {
-        height: 20rem; } }
   .coat .coat__logo--pulse {
     animation-name: pulse_animation;
     animation-duration: 3000ms;
@@ -305,11 +311,23 @@
     -ms-text-shadow: 0 0 1px rgba(255, 255, 255, 0.6);
     -o-text-shadow: 0 0 1px rgba(255, 255, 255, 0.6);
     text-shadow: 0 0 1px rgba(255, 255, 255, 0.6); }
+  .coat .coat__text.coat--two {
+    left: 26%;
+    text-shadow: 0 0 1px white; }
   .coat .coat__content {
     width: 100%;
     height: 100vh; }
   .coat .coat__content--bg-video {
     width: 100%; }
+
+/*media queries*/
+@media only screen and (max-width: 959px) {
+  .coat .coat__logo {
+    top: 75%; } }
+
+@media only screen and (max-width: 959px) {
+  .coat .coat__text.coat--one {
+    top: 75%; } }
 
 /*pulse animation*/
 @keyframes pulse_animation {
@@ -468,32 +486,34 @@
     .fem .fem__image .fem__image--one .fem__bg-narrow {
       left: 0; }
   .fem .fem__image--one {
-    background: url(".././images/fem4.jpg") center center/cover no-repeat;
-    transition: 0.5s; }
-  .fem .fem__image--sec {
     background: url(".././images/fem1.jpg") center center/cover no-repeat;
     transition: 0.5s; }
+  .fem .fem__image--sec {
+    background: url(".././images/fem4.jpg") center center/cover no-repeat;
+    transition: 0.5s; }
   .fem .fem__image--two {
-    background: url(".././images/fem5.jpg") center center/cover no-repeat;
+    background: url(".././images/fem3.jpg") center center/cover no-repeat;
     transition: 0.5s; }
   .fem .fem__image--trip {
-    background: url(".././images/fem3.jpg") center center/cover no-repeat;
+    background: url(".././images/fem5.jpg") center center/cover no-repeat;
     transition: 0.5s; }
 
 /*Prefix mixin*/
 /*media-queries mixin*/
+/*fluid typography*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
-@media only screen and (min-width: 320px) {
-  html {
-    font-size: 16px; } }
-
-@media only screen and (min-width: 960px) {
-  html {
-    font-size: 12px; } }
+html {
+  font-size: 14px; }
+  @media screen and (min-width: 320px) {
+    html {
+      font-size: calc(14px + strip-unit(4px) * (100vw - 320px) / strip-unit(1046px)); } }
+  @media screen and (min-width: 1366px) {
+    html {
+      font-size: 18px; } }
 
 body {
   font-family: 'News Cycle', sans-serif; }
@@ -549,7 +569,7 @@ body {
 .col-12 {
   width: 100%; }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   [class*='col-'] {
     float: none;
     width: 100%; } }
