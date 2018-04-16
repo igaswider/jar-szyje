@@ -46,13 +46,20 @@
     }
 
     .shirt__txt--three {
-      top: 50%;
-      left: 30rem;
+      bottom: 30%;
+      left: 20%;
+      width: 10%;
+      @include prefix-test(transform, translateY(0));
+    }
+
+    .shirt__txt--four {
+      top: 25%;
+      left: 16rem;
       @include prefix-test(text-shadow, 0 0 1px rgba(111, 92, 85, 0.8));
     }
 
     .shirt__txt--sec {
-      right: 20rem;
+      right: 10rem;
       transition: 0.5s;
     }
   }
@@ -75,5 +82,65 @@
   .shirt__image--three.shirt__image--sec {
     background: url(".././images/5.jpg") bottom / cover no-repeat fixed;
     transition: 0.5s;
+  }
+}
+
+/*media queries*/
+
+.shirt {
+  .shirt__image {
+    .shirt__bg-narrow {
+      @include screen(mobilePortrait) {
+        width: 6rem;
+        height: 6rem;
+        right: -1rem;
+      }
+      @include screen(mobileLandScape) {
+        width: 6rem;
+        height: 6rem;
+        right: -1rem;
+      }
+    }
+    @include screen(mobilePortrait) {
+      margin: 0 0 5rem;
+    }
+    @include screen(mobileLandScape){
+      margin: 5rem 0;
+    }
+  }
+  .shirt__image--one {
+    .shirt__txt--one {
+      @include screen(mobilePortrait) {
+        right: 10rem;
+      }
+    }
+    @include screen(mobilePortrait){
+      background: url(".././images/pierwsze-bg.jpg") center center / cover no-repeat;
+    }
+    @include screen(mobileLandScape) {
+      margin-top: 0;
+    }
+  }
+  .shirt__image--two {
+    @include screen(mobilePortrait){
+      background: url(".././images/trzecie-bg.jpg") 75% / cover no-repeat;
+    }
+  }
+  .shirt__image--three {
+    .shirt__txt--four {
+      @include screen(mobilePortrait) {
+        left: 0;
+      }
+    }
+    @include screen(mobilePortrait){
+      background: url(".././images/drugie-bg.jpg") 45% / cover no-repeat;
+    }
+  }
+  .shirt__image--three.shirt__image--sec {
+
+    @include screen(mobilePortrait){
+      background: url(".././images/5.jpg") center center / cover no-repeat;
+    }
+
   }
 }

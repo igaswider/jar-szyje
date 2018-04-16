@@ -1,11 +1,10 @@
 @import '../_mixins.scss';
 
 .footer {
-  min-height: 100vh;
+  //min-height: 100vh;
   position: relative;
   background-color: #fff;
-  overflow: hidden;
-  width: 100%;
+  overflow: hidden; //  width: 100%;
 
   .footer__image {
     position: relative;
@@ -15,7 +14,7 @@
     background: url(".././images/foto.jpg") center center / cover no-repeat fixed;
   }
 
-  .footer__txt {
+  .footer__contact {
     position: absolute;
     bottom: 2rem;
     left: 0;
@@ -24,27 +23,6 @@
     font-size: 1.5rem;
     line-height: 1.5;
     text-align: justify;
-  }
-
-  .footer__txt > p {
-    right: 10rem;
-  }
-
-  .footer__personal {
-    p {
-      display: inline-block;
-    }
-
-    .number {
-      position: absolute;
-      font-size: 1.5rem;
-      right: -2rem;
-    }
-
-    .name,
-    .number {
-      margin: 1rem 0 0;
-    }
   }
 
   .footer__social {
@@ -57,8 +35,53 @@
   }
 
   .footer__logo {
-    height: 45vh;
-    margin: 2.5rem 0;
+    height: 46vh;
+    margin: 2rem 0;
     background: url(".././images/logo/logojar/jar_transpa.png") center center / contain no-repeat;
+  }
+}
+/*media queries*/
+.footer {
+  .footer__contact {
+    @include screen(tablet){
+      bottom: 0;
+      top: 55%;
+      left: 0;
+      font-size: 2.5rem;
+    }
+    @include screen(mobile) {
+    //  bottom: 0;
+      top: 60%;
+      left: 5%;
+      font-weight: 500;
+      text-align: center;
+      font-size: 2rem;
+    }
+    @include screen(mobilePortrait) {
+      left: -5%;
+
+
+    }
+    @include screen(mobileLandScape) {
+      top: 10rem;
+      right: 12rem;
+      text-align: right;
+
+    }
+  }
+  .footer__image {
+    @include screen(mobile) {
+      margin-top: 0;
+      margin-bottom: 2rem;
+    }
+    @include screen(mobileLandScape) {
+      margin-top: 5rem;
+      margin-bottom: 0;
+    }
+  }
+  .footer__logo {
+    @include screen(mobileLandScape) {
+      height: 40vh;
+    }
   }
 }

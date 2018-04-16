@@ -70,14 +70,13 @@
     ul {
       position: relative;
       margin: 0 auto;
-      font-size: 3rem;
       text-transform: uppercase;
       list-style: none;
 
       li {
-        padding: 3.15rem;
+        padding: 2rem;
+        font-size: 2.5rem;
         color: #000;
-        font-size: 3.5rem;
         text-decoration: none;
 
         a {
@@ -85,19 +84,6 @@
           text-decoration: none;
         }
       }
-    }
-  }
-  /* film na całą szerokość ekranu*/
-  @media (min-aspect-ratio: 16 / 9) {
-    .start__content--bg-video {
-      top: 0;
-      height: 110%;
-    }
-  }
-  @media (max-aspect-ratio: 16 / 9) {
-    .start__content--bg-video {
-      width: 300%;
-      left: -100%;
     }
   }
   /*rest of header*/
@@ -123,40 +109,82 @@
       left: 0;
     }
 
-    .start__text {
-      bottom: 7rem;
-    }
-
     .start__logo {
       top: -21rem;
-      width: 33%;
-      height: 21rem;
+      width: 20rem;
+      height: 15rem;
       background: url("../images/logo/logojar/szyszka_biel.png") center / contain no-repeat;
       margin: 0 auto;
       @include prefix-test(transition, 2s);
     }
 
     .start__text {
-      width: 15%;
+      bottom: 7.5rem;
+      width: 15rem;
       height: 12rem;
       background: url("../images/logo/logojar/napis_biel.png") center / contain no-repeat;
-      /*centered element*/
       margin: 0 auto;
     }
   }
 }
-
 /*media queries*/
+/* film na całą szerokość ekranu*/
+@media (min-aspect-ratio: 16 / 9) {
+  .start__content--bg-video {
+    top: 0;
+    height: 110%;
+  }
+}
+@media (max-aspect-ratio: 16 / 9) {
+  .start__content--bg-video {
+    width: 300%;
+    left: -100%;
+  }
+}
 
 .start {
+  nav {
+    .hamburger {
+      @include screen(mobile) {
+        margin: 2rem;
+      }
+    }
+
+    ul {
+      li {
+        @include screen(mobileLandScape) {
+          font-size: 2rem;
+          padding: 1rem;
+        }
+      }
+    }
+  }
+
   .start__content {
+    .start__logo {
+      @include screen(mobileLandScape) {
+        width: 9rem;
+      }
+      @include screen(mobilePortrait) {
+        width: 9rem;
+      }
+    }
+
     .start__text {
-      @include screen(desktopSmall){
+      @include screen(desktopSmall) {
         bottom: 3rem;
       }
-      @include screen(tablet){
+      @include screen(tablet) {
         width: 40%;
-        bottom: 25%;
+        bottom: 25rem;
+      }
+      @include screen(mobileLandScape) {
+        width: 10rem;
+        bottom: -2rem;
+      }
+      @include screen(mobilePortrait) {
+        width: 11rem;
+        bottom: 6rem;
       }
     }
   }

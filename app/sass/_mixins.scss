@@ -12,6 +12,8 @@
   $desktopSmall: "(max-width: 1399px)";
   $tablet: "(max-width: 959px)";
   $mobile: "(max-width: 767px)";
+  $mobileLandScape: "(max-width: 767px) and (orientation: landscape)";
+  $mobilePortrait: "(max-width: 767px) and (orientation: portrait)";
   @if $size == desktopLarge {
     @media only screen and #{$desktopLarge} {
       @content;
@@ -29,6 +31,16 @@
   }
   @else if $size == mobile {
     @media only screen and #{$mobile} {
+      @content;
+    }
+  }
+  @else if $size == mobileLandScape {
+    @media only screen and #{$mobileLandScape} {
+      @content;
+    }
+  }
+  @else if $size == mobilePortrait {
+    @media only screen and #{$mobilePortrait} {
       @content;
     }
   }
@@ -57,4 +69,8 @@
       #{$property}: $max-value;
     }
   }
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
 }

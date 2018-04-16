@@ -7,7 +7,6 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
-  /* film na całą szerokość ekranu*/
   /*rest of header*/ }
   .start nav {
     position: fixed;
@@ -104,25 +103,16 @@
     .start nav ul {
       position: relative;
       margin: 0 auto;
-      font-size: 3rem;
       text-transform: uppercase;
       list-style: none; }
       .start nav ul li {
-        padding: 3.15rem;
+        padding: 2rem;
+        font-size: 2.5rem;
         color: #000;
-        font-size: 3.5rem;
         text-decoration: none; }
         .start nav ul li a {
           color: #000;
           text-decoration: none; }
-  @media (min-aspect-ratio: 16 / 9) {
-    .start .start__content--bg-video {
-      top: 0;
-      height: 110%; } }
-  @media (max-aspect-ratio: 16 / 9) {
-    .start .start__content--bg-video {
-      width: 300%;
-      left: -100%; } }
   .start .start__content {
     position: fixed;
     z-index: -100;
@@ -144,12 +134,10 @@
       position: absolute;
       right: 0;
       left: 0; }
-    .start .start__content .start__text {
-      bottom: 7rem; }
     .start .start__content .start__logo {
       top: -21rem;
-      width: 33%;
-      height: 21rem;
+      width: 20rem;
+      height: 15rem;
       background: url("../images/logo/logojar/szyszka_biel.png") center/contain no-repeat;
       margin: 0 auto;
       -webkit-transition: 2s;
@@ -158,13 +146,41 @@
       -o-transition: 2s;
       transition: 2s; }
     .start .start__content .start__text {
-      width: 15%;
+      bottom: 7.5rem;
+      width: 15rem;
       height: 12rem;
       background: url("../images/logo/logojar/napis_biel.png") center/contain no-repeat;
-      /*centered element*/
       margin: 0 auto; }
 
 /*media queries*/
+/* film na całą szerokość ekranu*/
+@media (min-aspect-ratio: 16 / 9) {
+  .start__content--bg-video {
+    top: 0;
+    height: 110%; } }
+
+@media (max-aspect-ratio: 16 / 9) {
+  .start__content--bg-video {
+    width: 300%;
+    left: -100%; } }
+
+@media only screen and (max-width: 767px) {
+  .start nav .hamburger {
+    margin: 2rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .start nav ul li {
+    font-size: 2rem;
+    padding: 1rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .start .start__content .start__logo {
+    width: 9rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .start .start__content .start__logo {
+    width: 9rem; } }
+
 @media only screen and (max-width: 1399px) {
   .start .start__content .start__text {
     bottom: 3rem; } }
@@ -172,24 +188,32 @@
 @media only screen and (max-width: 959px) {
   .start .start__content .start__text {
     width: 40%;
-    bottom: 25%; } }
+    bottom: 25rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .start .start__content .start__text {
+    width: 10rem;
+    bottom: -2rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .start .start__content .start__text {
+    width: 11rem;
+    bottom: 6rem; } }
 
 /*Prefix mixin*/
 /*media-queries mixin*/
 /*fluid typography*/
 .footer {
-  min-height: 100vh;
   position: relative;
   background-color: #fff;
-  overflow: hidden;
-  width: 100%; }
+  overflow: hidden; }
   .footer .footer__image {
     position: relative;
     width: 100%;
     height: 90vh;
     margin: 10rem 0 2.5rem;
     background: url(".././images/foto.jpg") center center/cover no-repeat fixed; }
-  .footer .footer__txt {
+  .footer .footer__contact {
     position: absolute;
     bottom: 2rem;
     left: 0;
@@ -202,26 +226,55 @@
     font-size: 1.5rem;
     line-height: 1.5;
     text-align: justify; }
-  .footer .footer__txt > p {
-    right: 10rem; }
-  .footer .footer__personal p {
-    display: inline-block; }
-  .footer .footer__personal .number {
-    position: absolute;
-    font-size: 1.5rem;
-    right: -2rem; }
-  .footer .footer__personal .name,
-  .footer .footer__personal .number {
-    margin: 1rem 0 0; }
   .footer .footer__social {
     margin: 1rem 0 0; }
     .footer .footer__social a {
       padding-right: 1rem;
       color: white; }
   .footer .footer__logo {
-    height: 45vh;
-    margin: 2.5rem 0;
+    height: 46vh;
+    margin: 2rem 0;
     background: url(".././images/logo/logojar/jar_transpa.png") center center/contain no-repeat; }
+
+/*media queries*/
+@media only screen and (max-width: 959px) {
+  .footer .footer__contact {
+    bottom: 0;
+    top: 55%;
+    left: 0;
+    font-size: 2.5rem; } }
+
+@media only screen and (max-width: 767px) {
+  .footer .footer__contact {
+    top: 60%;
+    left: 5%;
+    font-weight: 500;
+    text-align: center;
+    font-size: 2rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .footer .footer__contact {
+    left: -5%; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .footer .footer__contact {
+    top: 10rem;
+    right: 12rem;
+    text-align: right; } }
+
+@media only screen and (max-width: 767px) {
+  .footer .footer__image {
+    margin-top: 0;
+    margin-bottom: 2rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .footer .footer__image {
+    margin-top: 5rem;
+    margin-bottom: 0; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .footer .footer__logo {
+    height: 40vh; } }
 
 .intro {
   position: relative;
@@ -238,18 +291,18 @@
         margin: 5rem 0; } }
     .intro .intro__image .intro__txt {
       position: relative;
-      width: 47%;
+      width: 50%;
       top: 50%;
       -webkit-transform: translateY(-50%);
       -moz-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       -o-transform: translateY(-50%);
       transform: translateY(-50%);
-      padding: 1.25rem 6rem;
+      padding: 1.25rem 4rem;
       margin: 0 auto;
       background-color: rgba(56, 57, 56, 0.7);
       color: white;
-      font-size: 1.2rem;
+      font-size: 0.85rem;
       font-family: 'Varela', sans-serif; }
 
 /*media queries*/
@@ -258,6 +311,10 @@
     width: 100%;
     padding: 1rem 4rem;
     font-size: 1.5rem; } }
+
+@media only screen and (max-width: 767px) {
+  .intro .intro__image .intro__txt {
+    font-size: 1.25rem; } }
 
 .coat {
   position: relative;
@@ -281,9 +338,9 @@
   .coat .coat__logo {
     position: absolute;
     z-index: 99999999;
-    top: 60%;
+    top: 20rem;
     right: 5%;
-    width: 20%;
+    width: 10rem;
     height: 15rem;
     background: url("../images/logo/logojar/szyszka_biel.png") center/contain no-repeat;
     cursor: cell; }
@@ -295,10 +352,9 @@
     animation-timing-function: ease-out; }
   .coat .coat__text {
     position: absolute;
-    top: 25%;
+    top: 50%;
     left: 7%;
-    font-weight: 200;
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-align: right;
     line-height: 150%;
     -webkit-color: transparent;
@@ -315,19 +371,40 @@
     left: 26%;
     text-shadow: 0 0 1px white; }
   .coat .coat__content {
-    width: 100%;
-    height: 100vh; }
-  .coat .coat__content--bg-video {
-    width: 100%; }
+    min-height: 25rem; }
+    .coat .coat__content .coat__content--bg-video {
+      width: 100%; }
 
 /*media queries*/
+@media only screen and (max-width: 767px) {
+  .coat .coat__image {
+    margin-bottom: 5rem; } }
+
+@media only screen and (max-width: 767px) {
+  .coat .coat__content.video {
+    display: none; } }
+
 @media only screen and (max-width: 959px) {
   .coat .coat__logo {
-    top: 75%; } }
+    top: 50rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .coat .coat__logo {
+    top: 23rem;
+    width: 7rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .coat .coat__logo {
+    top: 8rem;
+    width: 7rem; } }
 
 @media only screen and (max-width: 959px) {
   .coat .coat__text.coat--one {
     top: 75%; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .coat .coat__content .coat__content--bg-video {
+    margin: 37.5vh 0; } }
 
 /*pulse animation*/
 @keyframes pulse_animation {
@@ -405,15 +482,24 @@
       -o-transform: translateY(0);
       transform: translateY(0); }
     .shirt .shirt__image .shirt__txt--three {
-      top: 50%;
-      left: 30rem;
+      bottom: 30%;
+      left: 20%;
+      width: 10%;
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0); }
+    .shirt .shirt__image .shirt__txt--four {
+      top: 25%;
+      left: 16rem;
       -webkit-text-shadow: 0 0 1px rgba(111, 92, 85, 0.8);
       -moz-text-shadow: 0 0 1px rgba(111, 92, 85, 0.8);
       -ms-text-shadow: 0 0 1px rgba(111, 92, 85, 0.8);
       -o-text-shadow: 0 0 1px rgba(111, 92, 85, 0.8);
       text-shadow: 0 0 1px rgba(111, 92, 85, 0.8); }
     .shirt .shirt__image .shirt__txt--sec {
-      right: 20rem;
+      right: 10rem;
       transition: 0.5s; }
   .shirt .shirt__image--one {
     background: url(".././images/pierwsze-bg.jpg") center center/cover no-repeat fixed; }
@@ -428,6 +514,55 @@
     background: url(".././images/5.jpg") bottom/cover no-repeat fixed;
     transition: 0.5s; }
 
+/*media queries*/
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .shirt .shirt__image .shirt__bg-narrow {
+    width: 6rem;
+    height: 6rem;
+    right: -1rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .shirt .shirt__image .shirt__bg-narrow {
+    width: 6rem;
+    height: 6rem;
+    right: -1rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .shirt .shirt__image {
+    margin: 0 0 5rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .shirt .shirt__image {
+    margin: 5rem 0; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .shirt .shirt__image--one .shirt__txt--one {
+    right: 10rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .shirt .shirt__image--one {
+    background: url(".././images/pierwsze-bg.jpg") center center/cover no-repeat; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .shirt .shirt__image--one {
+    margin-top: 0; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .shirt .shirt__image--two {
+    background: url(".././images/trzecie-bg.jpg") 75%/cover no-repeat; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .shirt .shirt__image--three .shirt__txt--four {
+    left: 0; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .shirt .shirt__image--three {
+    background: url(".././images/drugie-bg.jpg") 45%/cover no-repeat; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .shirt .shirt__image--three.shirt__image--sec {
+    background: url(".././images/5.jpg") center center/cover no-repeat; } }
+
 /*fem clothes article*/
 .fem {
   position: relative;
@@ -441,7 +576,6 @@
     .fem .fem__image .fem__txt {
       position: absolute;
       top: 20%;
-      left: 10%;
       font-weight: 200;
       font-size: 3rem;
       line-height: 150%;
@@ -455,7 +589,20 @@
       -ms-text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
       -o-text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
       text-shadow: 0 0 1px rgba(255, 255, 255, 0.7); }
+    .fem .fem__image .fem__txt--one {
+      top: 10%;
+      right: 10%; }
     .fem .fem__image .fem__txt--sec {
+      top: 10%;
+      right: 10%;
+      display: none;
+      transition: 0.5s; }
+    .fem .fem__image .fem__txt--two {
+      top: 60%;
+      left: 10%; }
+    .fem .fem__image .fem__txt--trip {
+      top: 10%;
+      left: 10%;
       display: none;
       transition: 0.5s; }
     .fem .fem__image .fem__bg-narrow {
@@ -498,6 +645,63 @@
     background: url(".././images/fem5.jpg") center center/cover no-repeat;
     transition: 0.5s; }
 
+/*media queries*/
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .fem .fem__image .fem__bg-narrow {
+    right: -1rem;
+    width: 7rem;
+    height: 7rem;
+    -webkit-transform: translateY(-50%) rotateY(0deg);
+    -moz-transform: translateY(-50%) rotateY(0deg);
+    -ms-transform: translateY(-50%) rotateY(0deg);
+    -o-transform: translateY(-50%) rotateY(0deg);
+    transform: translateY(-50%) rotateY(0deg); } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .fem .fem__image .fem__bg-narrow {
+    right: -1rem;
+    width: 7rem;
+    height: 7rem;
+    -webkit-transform: translateY(-50%) rotateY(0deg);
+    -moz-transform: translateY(-50%) rotateY(0deg);
+    -ms-transform: translateY(-50%) rotateY(0deg);
+    -o-transform: translateY(-50%) rotateY(0deg);
+    transform: translateY(-50%) rotateY(0deg); } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .fem .fem__image .fem__bg-narrow.fem__bg-narrow--mirror {
+    right: -1rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .fem .fem__image .fem__bg-narrow.fem__bg-narrow--mirror {
+    right: -1rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .fem .fem__image {
+    margin: 0 0 5rem;
+    height: 85vh; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .fem .fem__image {
+    margin-top: 5rem;
+    height: 235vh; } }
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  .fem .fem__image--one {
+    background: url(".././images/fem1.jpg") center center/contain no-repeat; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .fem .fem__image--one {
+    margin-bottom: 0; } }
+
+@media only screen and (max-width: 767px) {
+  .fem .fem__image--two {
+    margin-bottom: 5rem; } }
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .fem .fem__image--two {
+    margin-top: 0; } }
+
 /*Prefix mixin*/
 /*media-queries mixin*/
 /*fluid typography*/
@@ -510,10 +714,10 @@ html {
   font-size: 14px; }
   @media screen and (min-width: 320px) {
     html {
-      font-size: calc(14px + strip-unit(4px) * (100vw - 320px) / strip-unit(1046px)); } }
-  @media screen and (min-width: 1366px) {
+      font-size: calc(14px + 6 * (100vw - 320px) / 1580); } }
+  @media screen and (min-width: 1900px) {
     html {
-      font-size: 18px; } }
+      font-size: 20px; } }
 
 body {
   font-family: 'News Cycle', sans-serif; }

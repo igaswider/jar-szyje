@@ -13,11 +13,6 @@ var concat = require('gulp-concat');
 var babili = require('gulp-babili');
 var autoprefixer = require('gulp-autoprefixer');
 
-
-gulp.task('hello', () => {
-  console.log('Hello Bartek');
-});
-
 gulp.task('browserSync', () => {
   browserSync.init({
     server: {

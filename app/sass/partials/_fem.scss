@@ -13,7 +13,6 @@
     .fem__txt {
       position: absolute;
       top: 20%;
-      left: 10%;
       font-weight: 200;
       font-size: 3rem;
       line-height: 150%;
@@ -21,7 +20,26 @@
       @include prefix-test(text-shadow, 0 0 1px rgba(255,255, 255, 0.7));
     }
 
+    .fem__txt--one {
+      top: 10%;
+      right: 10%;
+    }
+
     .fem__txt--sec {
+      top: 10%;
+      right: 10%;
+      display: none;
+      transition: 0.5s;
+    }
+
+    .fem__txt--two {
+      top: 60%;
+      left: 10%;
+    }
+
+    .fem__txt--trip {
+      top: 10%;
+      left: 10%;
       display: none;
       transition: 0.5s;
     }
@@ -66,5 +84,59 @@
   .fem__image--trip {
     background: url(".././images/fem5.jpg") center center / cover no-repeat;
     transition: 0.5s;
+  }
+}
+/*media queries*/
+.fem {
+  .fem__image {
+    .fem__bg-narrow {
+      @include screen(mobilePortrait) {
+        right: -1rem;
+        width: 7rem;
+        height: 7rem;
+        @include prefix-test(transform, translateY(-50%) rotateY(0deg));
+      }
+      @include screen(mobileLandScape) {
+        right: -1rem;
+        width: 7rem;
+        height: 7rem;
+        @include prefix-test(transform, translateY(-50%) rotateY(0deg));
+      }
+    }
+
+    .fem__bg-narrow.fem__bg-narrow--mirror {
+      @include screen(mobilePortrait) {
+        right: -1rem;
+      }
+      @include screen(mobileLandScape) {
+        right: -1rem;
+      }
+    }
+    @include screen(mobilePortrait) {
+      margin: 0 0 5rem;
+      height: 85vh;
+    }
+    @include screen(mobileLandScape) {
+      margin-top: 5rem;
+      height: 235vh;
+    }
+  }
+
+  .fem__image--one {
+    @include screen(mobilePortrait) {
+      background: url(".././images/fem1.jpg") center center / contain no-repeat;
+    }
+    @include screen(mobileLandScape) {
+      margin-bottom: 0;
+    }
+  }
+
+  .fem__image--two {
+    @include screen(mobile) {
+      margin-bottom: 5rem;
+    }
+    @include screen(mobileLandScape) {
+      margin-top: 0;
+    }
   }
 }

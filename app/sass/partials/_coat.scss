@@ -1,6 +1,7 @@
 .coat {
   position: relative;
   background-color: #fff;
+
   .coat--bg-opacity {
     position: absolute;
     z-index: 1;
@@ -9,16 +10,20 @@
     background-color: #fff;
     opacity: 0.5;
   }
+
   .coat__image {
     position: relative;
     height: 100vh;
   }
+
   .coat__image.coat--one {
     background: url(".././images/pop_2.jpg") 25% / cover no-repeat fixed;
   }
+
   .coat__image.coat--two {
     background: url(".././images/pajka03.jpg") 25% / cover no-repeat fixed;
   }
+
   .coat__image.coat--three {
     background: url(".././images/trzecie.jpg") 25% / cover no-repeat fixed;
   }
@@ -26,9 +31,9 @@
   .coat__logo {
     position: absolute;
     z-index: 99999999;
-    top: 60%;
+    top: 20rem;
     right: 5%;
-    width: 20%;
+    width: 10rem;
     height: 15rem;
     background: url("../images/logo/logojar/szyszka_biel.png") center / contain no-repeat;
     cursor: cell;
@@ -44,10 +49,9 @@
 
   .coat__text {
     position: absolute;
-    top: 25%;
+    top: 50%;
     left: 7%;
-    font-weight: 200;
-    font-size: 3.5rem;
+    font-size: 3rem;
     text-align: right;
     line-height: 150%;
     @include prefix-test(color, transparent);
@@ -60,28 +64,53 @@
   }
 
   .coat__content {
-    width: 100%;
-    height: 100vh;
-  }
-  .coat__content--bg-video {
-    width: 100%;
+    min-height: 25rem;
+
+    .coat__content--bg-video {
+      width: 100%;
+    }
   }
 }
 /*media queries*/
-
 .coat {
+  .coat__image {
+    @include screen(mobile) {
+      margin-bottom: 5rem;
+    }
+  }
+  .coat__content.video {
+    @include screen(mobile) {
+      display: none;
+    }
+  }
   .coat__logo {
+    @include screen(tablet) {
+      top: 50rem;
+    }
+    @include screen(mobilePortrait) {
+      top: 23rem;
+      width: 7rem;
+    }
+    @include screen(mobileLandScape) {
+      top: 8rem;
+      width: 7rem;
+    }
+  }
+
+  .coat__text.coat--one {
     @include screen(tablet) {
       top: 75%;
     }
   }
-  .coat__text.coat--one {
-    @include screen(tablet){
-      top: 75%;
+
+  .coat__content {
+    .coat__content--bg-video {
+      @include screen(mobilePortrait) {
+        margin: 37.5vh 0;
+      }
     }
   }
 }
-
 /*pulse animation*/
 @keyframes pulse_animation {
   0% {

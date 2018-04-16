@@ -14,7 +14,7 @@
 }
 
 html {
-  @include fluid-type(font-size, 320px, 1366px, 14px, 18px);
+  @include fluid-type(font-size, 320px, 1900px, 14px, 20px);
 }
 
 body {
@@ -36,7 +36,6 @@ $width-base: 100%/$cols;
 .container {
   margin: 0 auto;
   width: 100%;
-  //max-width: 1060px;
 }
 
 .row {
